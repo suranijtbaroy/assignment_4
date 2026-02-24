@@ -1,4 +1,4 @@
-// 1. Initial Data (Minimum 8 Cards)
+// Initial Data (Minimum 8 Cards)
 
 let jobs = [
     { id: 1, companyName: "Google", position: "Frontend Dev", location: "Mountain View", type: "Full-time", salary: "$120k", status: "all", description: "Work on the world's most popular search engine and UI components." },
@@ -13,7 +13,7 @@ let jobs = [
 
 let currentTab = 'all';
 
-// 2. Render Function (For Ui Display)
+// Render Function (For Ui Display)
 function renderJobs() {
     const container = document.getElementById('jobs-container');
     
@@ -72,11 +72,10 @@ function renderJobs() {
     `).join('');
 }
 
-// 3. Status Change (Interview/Rejected toggle)
+// Status Change (Interview/Rejected toggle)
 function updateStatus(id, newStatus) {
     jobs = jobs.map(job => {
         if (job.id === id) {
-            // Jodi ager status e abar click kore, tahole 'all' (reset) hoye jabe
             return { ...job, status: job.status === newStatus ? 'all' : newStatus };
         }
         return job;
@@ -92,7 +91,7 @@ function deleteJob(id) {
     }
 }
 
-// 5. Tab Switching UI Update
+// Tab Switching UI Update
 function switchTab(tab) {
     currentTab = tab;
     const tabs = ['all', 'interview', 'rejected'];
