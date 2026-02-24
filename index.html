@@ -10,4 +10,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
+<body class="bg-slate-50 min-h-screen p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <h1 class="text-2xl font-bold mb-6">Job Application Tracker</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                <p class="text-sm text-slate-500">Total</p>
+                <h2 id="total-count" class="text-2xl font-bold">8</h2>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                <p class="text-sm text-green-600 font-semibold">Interview</p>
+                <h2 id="interview-count" class="text-2xl font-bold">0</h2>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                <p class="text-sm text-red-600 font-semibold">Rejected</p>
+                <h2 id="rejected-count" class="text-2xl font-bold">0</h2>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Available Jobs</h2>
+            <span class="text-slate-500 font-medium"><span id="tab-count">8</span> Jobs</span>
+        </div>
+
+        <div role="tablist" class="tabs tabs-boxed mb-6 bg-transparent gap-2">
+            <button onclick="switchTab('all')" id="tab-all" class="tab tab-active bg-blue-600 text-white">All</button>
+            <button onclick="switchTab('interview')" id="tab-interview" class="tab">Interview</button>
+            <button onclick="switchTab('rejected')" id="tab-rejected" class="tab">Rejected</button>
+        </div>
+
+        <div id="jobs-container" class="grid grid-cols-1 gap-4">
+        </div>
+    </div>
+
+   
+</body>
+
 </html>
