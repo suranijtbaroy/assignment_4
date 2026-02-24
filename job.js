@@ -91,7 +91,7 @@ function deleteJob(id) {
     }
 }
 
-// Tab Switching UI Update
+// TabSwitching UI Update
 function switchTab(tab) {
     currentTab = tab;
     const tabs = ['all', 'interview', 'rejected'];
