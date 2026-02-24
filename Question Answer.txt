@@ -1,0 +1,65 @@
+
+
+
+Answer to the question no-1
+
+The differences lie in how they target elements and what they return:
+
+getElementById: Targets a single element by its unique ID attribute. It is the fastest method and returns a single element object.
+
+getElementsByClassName: Targets all elements with a specific class name. It returns a "live" HTMLCollection (updates automatically if the DOM changes).
+
+querySelector: A flexible method that uses CSS selectors (e.g., .my-class, #my-id, div > p). It returns only the first matching element.
+
+querySelectorAll: Uses CSS selectors to find all matching elements. It returns a static NodeList, which allows you to use methods like .forEach().
+
+
+
+
+Answer to the question no-2
+
+Creating and inserting an element is a two-step process:
+
+Creation: Use document.createElement('tagName') to create the element in memory.
+
+Example: const newBtn = document.createElement('button');
+
+Insertion: Use methods like appendChild(), prepend(), or insertBefore() to attach it to the DOM tree.
+
+Example: document.getElementById('container').appendChild(newBtn);
+
+
+
+
+
+Answer to the question no-3
+
+Event Bubbling is a concept where an event starts from the deepest target element and "bubbles up" through its ancestors in the DOM hierarchy.
+
+How it works: If you click a button inside a div, the click event first triggers on the button, then moves to the div, then to the body, and finally to the document and window. This allows parent elements to "hear" events happening inside their children.
+
+
+
+
+
+
+Answer to the question no-4
+
+Event Delegation is a technique where you attach a single event listener to a parent element instead of attaching multiple listeners to every child.
+
+Why it is useful:
+
+Memory Efficiency: It uses less memory because there is only one listener.
+
+Dynamic Elements: It works for elements added to the DOM after the page has loaded (like the "Delete" buttons in your job tracker project). Since the listener is on the parent, it will catch events from new children automatically.
+
+
+
+
+
+Answer to the question no-5
+These methods control different aspects of an event's behavior:
+
+preventDefault(): Stops the default action that the browser usually takes for an event. For example, it stops a link from navigating to a new URL or a form from refreshing the page upon submission.
+
+stopPropagation(): Stops the event from bubbling up the DOM tree. It prevents parent event handlers from being notified that the event happened.
